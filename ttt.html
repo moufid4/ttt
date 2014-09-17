@@ -1,34 +1,81 @@
+<!-- cell.attr('id') -->
 <!DOCTYPE HTML>
 <html>
 	<head>
+
 		<link rel="stylesheet" type="text/css" href="ttt.css"/>
 		<script src="ttt.js"></script>	
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		
 		<script>
-
 			$(document).ready(function(){
+			var turn = 0;
+			xPlays = [];
+			oPlays = [];
 
-				var turn = 0;
-								$("#cell11, #cell12, #cell21, #cell22, #cell31, #cell32, #cell13, #cell23, #cell33")
-					.click(
-							function(){
-								var cell = $(this);
-								if(turn==0){
-									turn = 1;
-									cell.css("background","url(o.png)");
-								}else{
-									turn = 0;
-									cell.css("background","url(x.png)");
-								}
-							}
+			$("#cell11, #cell12, #cell21, #cell22, #cell31, #cell32, #cell13, #cell23, #cell33")
+				.click(
+				function(){
+					var cell = $(this);
+								
+					if(turn==0){
+					turn = 1;
+						cell.css("background","url(o.png)");
+						playerO(cell.attr('id'));	
+
+						}else{
+							turn = 0;
+							cell.css("background","url(x.png)");
+							playerX(cell.attr('id'));	
+						}
+
+						}
 						);
+					}
+					);
+		function playerX(cell){
+			
+				console.log(cell);
+				xPlays.push(cell);
+				console.log(xPlays);
+			// check if rows are winning combination
+			if((jQuery.inArray("cell11", xPlays) > -1) && (jQuery.inArray("cell12", xPlays) > -1) && (jQuery.inArray("cell13", xPlays) > -1)){
+				alert("X WON!!!");
+			}else if((jQuery.inArray("cell21", xPlays) > -1) && (jQuery.inArray("cell22", xPlays) > -1) && (jQuery.inArray("cell23", xPlays) > -1)){
+				alert("X WON!!!");
+			}else if((jQuery.inArray("cell31", xPlays) > -1) && (jQuery.inArray("cell32", xPlays) > -1) && (jQuery.inArray("cell33", xPlays) > -1)){
+				alert("X WON!!!");
 			}
-			);
-		</script>
-		<title>Tic Tac Toe</title>
 
+
+		};
+		function playerO(cell){
+			console.log(cell);
+			oPlays.push(cell);
+			console.log(oPlays);
+
+			// check if rows are winning combination
+			if((jQuery.inArray("cell11", oPlays) > -1) && (jQuery.inArray("cell12", oPlays) > -1) && (jQuery.inArray("cell13", oPlays) > -1)){
+				alert("X WON!!!");
+			}else if((jQuery.inArray("cell21", oPlays) > -1) && (jQuery.inArray("cell22", oPlays) > -1) && (jQuery.inArray("cell23", oPlays) > -1)){
+				alert("X WON!!!");
+			}else if((jQuery.inArray("cell31", oPlays) > -1) && (jQuery.inArray("cell32", oPlays) > -1) && (jQuery.inArray("cell33", oPlays) > -1)){
+				alert("X WON!!!");
+			}
+
+		};
+		</script>
+
+
+
+
+
+
+	<title>Tic Tac Toe</title>
 	</head>
+
+
 	<body>
 		<h1>Welcome to Tic Tac Toe!</h1>
 		<style>
