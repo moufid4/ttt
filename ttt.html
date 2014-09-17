@@ -34,37 +34,72 @@
 						);
 					}
 					);
-		function playerX(cell){
-			
+
+			function playerX(cell){
+				
+					console.log(cell);
+					xPlays.push(cell);
+					console.log(xPlays);
+				
+				// check if rows are winning combination
+				if((jQuery.inArray("cell11", xPlays) > -1) && (jQuery.inArray("cell12", xPlays) > -1) && (jQuery.inArray("cell13", xPlays) > -1)){
+					alert("X WON!!!");
+				}else if((jQuery.inArray("cell21", xPlays) > -1) && (jQuery.inArray("cell22", xPlays) > -1) && (jQuery.inArray("cell23", xPlays) > -1)){
+					alert("X WON!!!");
+				}else if((jQuery.inArray("cell31", xPlays) > -1) && (jQuery.inArray("cell32", xPlays) > -1) && (jQuery.inArray("cell33", xPlays) > -1)){
+					alert("X WON!!!");
+				};
+
+				// check if columns are winning combination
+				if((jQuery.inArray("cell11", xPlays) > -1) && (jQuery.inArray("cell21", xPlays) > -1) && (jQuery.inArray("cell31", xPlays) > -1)){
+					alert("X WON!!!");
+				}else if((jQuery.inArray("cell12", xPlays) > -1) && (jQuery.inArray("cell22", xPlays) > -1) && (jQuery.inArray("cell32", xPlays) > -1)){
+					alert("X WON!!!");
+				}else if((jQuery.inArray("cell13", xPlays) > -1) && (jQuery.inArray("cell23", xPlays) > -1) && (jQuery.inArray("cell33", xPlays) > -1)){
+					alert("X WON!!!");
+				};
+
+				// check if the diagonals are winning combination
+				if((jQuery.inArray("cell11", xPlays) > -1) && (jQuery.inArray("cell22", xPlays) > -1) && (jQuery.inArray("cell33", xPlays) > -1)){
+					alert("X WON!!!");
+				}else if((jQuery.inArray("cell31", xPlays) > -1) && (jQuery.inArray("cell22", xPlays) > -1) && (jQuery.inArray("cell13", xPlays) > -1)){
+					alert("X WON!!!");
+
+				};
+			};
+
+			function playerO(cell){
 				console.log(cell);
-				xPlays.push(cell);
-				console.log(xPlays);
-			// check if rows are winning combination
-			if((jQuery.inArray("cell11", xPlays) > -1) && (jQuery.inArray("cell12", xPlays) > -1) && (jQuery.inArray("cell13", xPlays) > -1)){
-				alert("X WON!!!");
-			}else if((jQuery.inArray("cell21", xPlays) > -1) && (jQuery.inArray("cell22", xPlays) > -1) && (jQuery.inArray("cell23", xPlays) > -1)){
-				alert("X WON!!!");
-			}else if((jQuery.inArray("cell31", xPlays) > -1) && (jQuery.inArray("cell32", xPlays) > -1) && (jQuery.inArray("cell33", xPlays) > -1)){
-				alert("X WON!!!");
-			}
+				oPlays.push(cell);
+				console.log(oPlays);
+
+				// check if rows are winning combination
+				if((jQuery.inArray("cell11", oPlays) > -1) && (jQuery.inArray("cell12", oPlays) > -1) && (jQuery.inArray("cell13", oPlays) > -1)){
+					alert("O WON!!!");
+				}else if((jQuery.inArray("cell21", oPlays) > -1) && (jQuery.inArray("cell22", oPlays) > -1) && (jQuery.inArray("cell23", oPlays) > -1)){
+					alert("O WON!!!");
+				}else if((jQuery.inArray("cell31", oPlays) > -1) && (jQuery.inArray("cell32", oPlays) > -1) && (jQuery.inArray("cell33", oPlays) > -1)){
+					alert("O WON!!!");
+				}
+
+				// check if columns are winning combination
+				if((jQuery.inArray("cell11", oPlays) > -1) && (jQuery.inArray("cell21", oPlays) > -1) && (jQuery.inArray("cell31", oPlays) > -1)){
+					alert("O WON!!!");
+				}else if((jQuery.inArray("cell12", oPlays) > -1) && (jQuery.inArray("cell22", oPlays) > -1) && (jQuery.inArray("cell32", oPlays) > -1)){
+					alert("O WON!!!");
+				}else if((jQuery.inArray("cell13", oPlays) > -1) && (jQuery.inArray("cell23", oPlays) > -1) && (jQuery.inArray("cell33", oPlays) > -1)){
+					alert("O WON!!!");
+				}
+
+				// check if the diagonals are winning combination
+				if((jQuery.inArray("cell11", oPlays) > -1) && (jQuery.inArray("cell22", oPlays) > -1) && (jQuery.inArray("cell33", oPlays) > -1)){
+					alert("O WON!!!");
+				}else if((jQuery.inArray("cell31", oPlays) > -1) && (jQuery.inArray("cell22", oPlays) > -1) && (jQuery.inArray("cell13", oPlays) > -1)){
+					alert("O WON!!!");
+				}
+			};
 
 
-		};
-		function playerO(cell){
-			console.log(cell);
-			oPlays.push(cell);
-			console.log(oPlays);
-
-			// check if rows are winning combination
-			if((jQuery.inArray("cell11", oPlays) > -1) && (jQuery.inArray("cell12", oPlays) > -1) && (jQuery.inArray("cell13", oPlays) > -1)){
-				alert("X WON!!!");
-			}else if((jQuery.inArray("cell21", oPlays) > -1) && (jQuery.inArray("cell22", oPlays) > -1) && (jQuery.inArray("cell23", oPlays) > -1)){
-				alert("X WON!!!");
-			}else if((jQuery.inArray("cell31", oPlays) > -1) && (jQuery.inArray("cell32", oPlays) > -1) && (jQuery.inArray("cell33", oPlays) > -1)){
-				alert("X WON!!!");
-			}
-
-		};
 		</script>
 
 
